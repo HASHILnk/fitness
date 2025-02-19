@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+body {
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+    background-color: #070505;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage-container {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Light Mode */
+  .light-mode {
+    background-color: #dad6d6;
+    color: rgb(171, 166, 166);
+  }
+  
+  /* Dark Mode */
+  .dark-mode {
+    background: radial-gradient(circle at center, #2e2b5f, #000); /* Violet-dark mix */
+    color: white;
+  }
+  .dark-mode .heading {
+    color: white;
+  }
+  
+  
+  
+  
+  
+  
+  .dark-mode #chat-container {
+     
+    color: rgb(255, 255, 255); /* Black text for better visibility */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Optional for aesthetics */
+  }
+  
+/* Theme Switch (Slider) */
+.theme-switch {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  right:52%;
+  top:10%;
+}
+
+/* Hide default checkbox */
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: rgb(2, 2, 2);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checked state (Dark Mode) */
+input:checked + .slider {
+  background-color: rgb(250, 249, 249);
+}
+
+input:checked + .slider:before {
+  content: "";
+  transform: translateX(70px);
+}
+
+
+  
+header {
+    display: flex;
+    font-family: 'Irish Grover', cursive;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+  }
+  
+/* Logo or Heading */
+.heading {
+  position:absolute;
+  font-size: 2.5rem;
+  font-family: 'Irish Grover', cursive;
+  margin: 0;
+  color:black;
+  top: 50px;
+  left:50px;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 20px; /* Adds space between nav items */
+  top:50px;
+  right:50px;
+}
+
+/* Navigation Button Styles */
+.nav-btn {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: #000; /* Ensure no background */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove any box shadow */
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: #ff0000; /* Change the text color to red on hover */
+}
+
+
+/* Dark Mode Navigation Buttons */
+.dark-mode .nav-btn {
+  color: white; /* Adjust text color for dark mode */
+  background: none; /* Ensure no background */
+  box-shadow: none; /* Remove any box shadow */
+}
+.light-mode .nav-btn {
+  color: rgb(0, 0, 0); /* Adjust text color for dark mode */
+  background: transparent; /* Ensure no background */
+  box-shadow: none; /* Remove any box shadow */
+}
+
+.dark-mode .nav-btn:hover {
+  color: #f90707; /* Slightly brighter red on hover in dark mode */
+  background: transparent;
+}
+.light-mode .nav-btn:hover {
+  color: #f90707; /* Slightly brighter red on hover in dark mode */
+  background: transparent;
+}
+
+
+
+
+/* Profile Icon Styles */
+.profile-icon {
+  font-size: 40px; 
+  color: black; 
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode .profile-icon {
+  font-size: 40px; /* Adjust size for better visibility */
+  color: rgb(255, 255, 255); /* Default color */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.profile-icon:hover {
+  color: rgb(255, 0, 0); /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+
+
+/* Adjust main layout for desktop */
+main {
+  display: flex;
+  justify-content: space-between; /* Buttons on left, images on right */
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+  padding: 70px;
+  box-sizing: border-box;
+}
+
+/* Buttons on the left */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 15%; /* Push buttons towards the left */
+  padding-top:9%;
+}
+
+/* Button styling */
+.action-btn {
+  padding: 25px 90px;
+  background-color: rgb(252, 250, 250);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.3);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  background-color: rgb(253, 2, 2);
+}
+
+/* Image container to keep images together */
+.image-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center images */
+  gap: 10px;
+  margin-right: 700px; /* Push images to the right */
+}
+
+/* Images inside container */
+.images, .images2 {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+.images img  {
+  position: absolute;
+  width: 250px;
+  right:15%;
+  top:25%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.3);
+}
+.images2 img{
+  position: absolute;
+  width: 250px;
+  height:250px;
+  border-radius: 15px;
+  right: 25%;
+  top:50%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.3);
+}
+
+/* Buttons in Dark Mode */
+.dark-mode .action-btn {
+  box-shadow: 5px 5px 15px rgba(245, 244, 244, 0.2); /* Softer white shadow */
+  background-color: #ffffff; /* Darker button background */
+  color: rgb(0, 0, 0); /* White text */
+}
+
+.dark-mode .action-btn:hover {
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.5); /* Brighter shadow on hover */
+  background-color: #f30808; /* Slightly brighter background on hover */
+}
+
+/* Images in Dark Mode */
+.dark-mode .images img, 
+.dark-mode .images2 img {
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.2); /* Soft white shadow */
+}
+
+.dark-mode .images img:hover, 
+.dark-mode .images2 img:hover {
+  box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 720px) {
+  main {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Move images to the top */
+  .image-container1 {
+      display: none;
+  }
+  .slider {
+     margin-right: 90px;
+      margin-top: 90px;
+  }
+  /* Move buttons to the bottom */
+  .buttons {
+      order: 1;
+      margin-right: 70px;
+      margin-top: 60px;
+  }
+
+  /* Make images stack vertically */
+  .images, .images2 {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Ensure images take up full width on mobile */
+  .images img, .images2 img {
+      width: 50%;
+  }
+}
+
+  /* Chat Container */
+#chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  color:black;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chat Icon */
+#chat-icon {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#chat-icon:hover {
+  transform: scale(1.2);
+}
+
+#chat-icon:active {
+  transform: scale(0.9);
+}
+
+/* Chat Box */
+#chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 100;
+  opacity: 1;  /* Ensure chat box is fully visible */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Chat Header */
+#chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Chat Content */
+#chat-content {
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Chat Input */
+#chat-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+
+
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  width: 300px;
+  height: 50%;
+  background-color: rgba(112, 107, 107, 0.4);
+  color: black;
+  padding-top: 60px;
+  z-index: 1000;
+  opacity: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* Slide off-screen by default */
+  border-top-left-radius: 30px; /* Rounded top left corner */
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px; /* Rounded top left corner */
+  border-bottom-right-radius: 30px;
+}
+
+.mobile-drawer.open .menu-toggle {
+  display: none;
+}
+.mobile-drawer.open {
+  display: block;
+  transform: translateX(0); /* Slide into view */
+}
+
+.close-drawer {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.menu-toggle.hidden {
+  display: none;
+}
+
+.mobile-drawer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-drawer li {
+  padding: 20px;
+  border-bottom: 1px solid #444;
+  margin-bottom: 3px;
+}
+
+.mobile-drawer a {
+  padding: 10px 90px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: black;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 24px;
+  right: 20px;
+  background: none;
+  border: none;
+  z-index: 1100;
+  font-size: 35px;;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  color: rgb(255, 0, 0);
+}
+.light-mode .menu-toggle {
+  color: rgb(0, 0, 0);
+}
+
+.dark-mode .menu-toggle {
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+  .nav-btn{
+    display:none;
+  }
+  .profile-icon{
+    display:none;
+  }
+
+}
+
+
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+.page-exit {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+.page-enter {
+  animation: slideInRight 0.5s forwards;
+}
+
+

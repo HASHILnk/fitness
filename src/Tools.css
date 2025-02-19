@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+body {
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+    background-color: #EFEFEF;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    display: flex;
+    font-family: 'Irish Grover', cursive;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+  }
+  
+/* Logo or Heading */
+.heading {
+  position:absolute;
+  font-size: 2.5rem;
+  font-family: 'Irish Grover', cursive;
+  margin: 0;
+  color:black;
+  top: 50px;
+  left:50px;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 20px; /* Adds space between nav items */
+  top:50px;
+  right:50px;
+}
+
+/* Navigation Button Styles */
+.nav-btn {
+  text-decoration: none;
+  background-color: #EFEFEF;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 5px 10px; /* Makes it look more button-like */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+  /* background-color: #EFEFEF; */
+  color: #ff0000; /* Change the text color to white for better contrast */
+  border-radius: 5px; /* Add a subtle rounding effect */
+}
+
+
+
+
+/* Profile Icon Styles */
+.profile-icon {
+  font-size: 40px; 
+  color: black; 
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Mobile Drawer */
+.mobile-drawer {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    width: 300px;
+    height: 50%;
+    background-color: rgba(112, 107, 107, 0.4);
+    color: black;
+    padding-top: 60px;
+    z-index: 1000;
+    opacity: 100%;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Slide off-screen by default */
+    border-top-left-radius: 30px; /* Rounded top left corner */
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px; /* Rounded top left corner */
+    border-bottom-right-radius: 30px;
+  }
+  
+  .mobile-drawer.open .menu-toggle {
+    display: none;
+  }
+  .mobile-drawer.open {
+    display: block;
+    transform: translateX(0); /* Slide into view */
+  }
+  
+  .close-drawer {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  
+  .menu-toggle.hidden {
+    display: none;
+  }
+  
+  .mobile-drawer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-drawer li {
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 3px;
+  }
+  
+  .mobile-drawer a {
+    padding: 10px 90px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: black;
+  }
+  
+  /* Menu Toggle Button */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 24px;
+    right: 20px;
+    background: none;
+    border: none;
+    z-index: 1100;
+    font-size: 35px;;
+    cursor: pointer;
+  }
+  
+  .menu-toggle:hover {
+    color: rgb(255, 0, 0);
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar-links {
+      display: none;
+    }
+    .nav-btn{
+      display:none;
+    }
+    .profile-icon{
+      display:none;
+    }
+  
+  }
+  
