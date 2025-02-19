@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; 
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import { FaCommentAlt, FaUserCircle } from "react-icons/fa";
 
@@ -62,13 +62,13 @@ const HomePage = () => {
         </ul>
       </div>
 
-    
 
 
 
 
 
-<main>
+
+      <main>
         <div className="buttons">
           <button className="action-btn">Profile</button>
           <button className="action-btn" onClick={() => handleNavigation("/tools")}>Tools</button>
